@@ -1,5 +1,5 @@
 class CreateMovies < ActiveRecord::Migration
-  def change
+  def up
     create_table :movies do |t|
       t.string :title
       t.string :rating
@@ -9,5 +9,9 @@ class CreateMovies < ActiveRecord::Migration
       # of when movies are added or modified:
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :movies
   end
 end
